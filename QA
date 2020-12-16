@@ -1,446 +1,402 @@
+﻿
 <!DOCTYPE html>
-<html>
+
+<html lang="en">
 <head>
-	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
-	<!-- <link href="pagestyle.css" rel="stylesheet"> -->
-	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js">
-	</script>
-	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js">
-	</script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js">
-	</script>
-	<!-- <script src="scripts.js">
-	</script> -->
-	<title></title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
 </head>
 <body>
-	<label for="Departments&quot;">Filter by Department:</label> <select id="Departments" name="Departments" onchange="filterTable()">
-		<option value="blank">
-		</option>
-	</select> <button class="btn btn-primary" onclick="clearFilter()" type="button">Clear Filter</button>
-	<table class="table table-bordered" id="hrtable">
-		<tr>
-			<th>National Insurance Number</th>
-			<th>Full Name</th>
-			<th>Phone Number</th>
-			<th>adressess</th>
-			<th>Department</th>
-			<th>Delete Action</th>
-			<th>Edit Action</th>
-		</tr>
-	</table>
-	<div class="modal fade" id="editModal" role="diaglog">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-                    <button aria-label="Close" class="close" data-dismiss="modal" type="button">
-                        <span aria-hidden="true">
-                            &times;
-                        </span>
-                    </button>
+
+    <div class="container bootstrap snippets bootdeys">
+        <div class="row">
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">Brand</a>
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+                            <li><a href="#">Link</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#">Separated link</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#">One more separated link</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <form class="navbar-form navbar-right">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search">
+                            </div>
+                            <button type="submit" class="btn btn-default">Submit</button>
+                        </form>
+                        <!--<ul class="nav navbar-nav navbar-right">
+                            <li><a href="#">Link</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#">Separated link</a></li>
+                                </ul>
+                            </li>
+                        </ul>-->
+                    </div><!-- /.navbar-collapse -->
+                </div><!-- /.container-fluid -->
+            </nav>
+
+
+            <div class="col-lg-3 col-md-3 col-sm-4">
+                <div class="panel rounded shadow">
+                    <div class="panel-body">
+                        <div class="inner-all">
+                            <ul class="list-unstyled">
+                                <li class="text-center">
+                                    <img data-no-retina="" class="img-circle img-responsive img-bordered-primary" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="John Doe">
+                                </li>
+                                <li class="text-center">
+                                    <h4 class="text-capitalize">John Doe</h4>
+                                    <p class="text-muted text-capitalize">web designer</p>
+                                </li>
+                                <li>
+                                    <a href="" class="btn btn-success text-center btn-block">PRO Account</a>
+                                </li>
+                                <li><br></li>
+                                <li>
+                                    <div class="btn-group-vertical btn-block">
+                                        <a href="" class="btn btn-default"><i class="fa fa-cog pull-right"></i>Edit Account</a>
+                                        <a href="" class="btn btn-default"><i class="fa fa-sign-out pull-right"></i>Logout</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div><!-- /.panel -->
+
+                <div class="panel panel-theme rounded shadow">
+                    <div class="panel-heading">
+                        <div class="pull-left">
+                            <h3 class="panel-title">Different Groups</h3>
+                        </div>
+                        <div style="margin-top:10px" class="pull-right">
+                            <a href="#" class="btn btn-sm btn-success"><i class="fa fa-facebook"></i></a>
+                            <a href="#" class="btn btn-sm btn-success"><i class="fa fa-twitter"></i></a>
+                            <a href="#" class="btn btn-sm btn-success"><i class="fa fa-google-plus"></i></a>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div><!-- /.panel-heading -->
+                    <div class="panel-body no-padding rounded">
+                        <ul class="list-group no-margin">
+                            <li class="list-group-item"><i class="fa fa-envelope mr-5"></i> support@bootdey.com</li>
+                            <li class="list-group-item"><i class="fa fa-globe mr-5"></i> www.bootdey.com</li>
+                            <li class="list-group-item"><i class="fa fa-phone mr-5"></i> +6281 903 xxx xxx</li>
+                        </ul>
+                    </div><!-- /.panel-body -->
+                </div><!-- /.panel -->
+
+            </div>
+            <div class="col-lg-9 col-md-9 col-sm-8">
+
+                <div class="divider"></div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="panel panel-success rounded shadow">
+                            <div class="panel-heading no-border">
+                                <div class="pull-left half">
+                                    <div class="media">
+                                        <div class="media-object pull-left">
+                                            <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="..." class="img-circle img-post">
+                                        </div>
+                                        <div class="media-body">
+                                            <a href="#" class="media-heading block mb-0 h4 text-white">John Doe</a>
+                                            <span class="text-white h6">on 8th June, 2014</span>
+                                        </div>
+                                    </div>
+                                </div><!-- /.pull-left -->
+                                <div class="pull-right">
+                                    <a href="#" class="text-white h4"><i class="fa fa-heart"></i> 15.5K</a>
+                                </div><!-- /.pull-right -->
+                                <div class="clearfix"></div>
+                            </div><!-- /.panel-heading -->
+                            <div class="panel-body no-padding">
+                                <div class="inner-all block">
+                                    <h4>Upload on my album :D</h4>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita, iste omnis fugiat porro consequuntur ratione iure error reprehenderit cum est ab similique magnam molestias aperiam voluptatibus quia aliquid! Sed, minima.
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita, iste omnis fugiat porro consequuntur ratione iure error reprehenderit cum est ab similique magnam molestias aperiam voluptatibus quia aliquid! Sed, minima.
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita, iste omnis fugiat porro consequuntur ratione iure error reprehenderit cum est ab similique magnam molestias aperiam voluptatibus quia aliquid! Sed, minima.
+
+                                    </p>
+                                    <blockquote class="mb-10">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, delectus!</blockquote>
+
+                                </div><!-- /.inner-all -->
+
+                            </div><!-- /.panel-body -->
+                        </div><!-- /.panel -->
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="panel panel-success rounded shadow">
+                            <div class="panel-heading no-border">
+                                <div class="pull-left half">
+                                    <div class="media">
+                                        <div class="media-object pull-left">
+                                            <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="..." class="img-circle img-post">
+                                        </div>
+                                        <div class="media-body">
+                                            <a href="#" class="media-heading block mb-0 h4 text-white">John Doe</a>
+                                            <span class="text-white h6">on 8th June, 2014</span>
+                                        </div>
+                                    </div>
+                                </div><!-- /.pull-left -->
+                                <div class="pull-right">
+                                    <a href="#" class="text-white h4"><i class="fa fa-heart"></i> 15.5K</a>
+                                </div><!-- /.pull-right -->
+                                <div class="clearfix"></div>
+                            </div><!-- /.panel-heading -->
+                            <div class="panel-body no-padding">
+                                <!--<img src="https://via.placeholder.com/340x210/" alt="..." class="img-responsive full-width">-->
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita, iste omnis fugiat porro consequuntur ratione iure error reprehenderit cum est ab similique magnam molestias aperiam voluptatibus quia aliquid! Sed, minima.
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita, iste omnis fugiat porro consequuntur ratione iure error reprehenderit cum est ab similique magnam molestias aperiam voluptatibus quia aliquid! Sed, minima.
+
+                                </p>
+                                <div class="inner-all block">
+                                    view all <a href="#">7 comments</a>
+                                </div><!-- /.inner-all -->
+                                <div class="line no-margin"></div><!-- /.line -->
+                                <div class="media inner-all no-margin">
+                                    <div class="pull-left">
+                                        <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="..." class="img-post2">
+                                    </div><!-- /.pull-left -->
+                                    <div class="media-body">
+                                        <a href="#" class="h4">John Doe</a>
+                                        <small class="block text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </small>
+                                        <em class="text-xs text-muted">Posted on <span class="text-danger">Dec 08, 2014</span></em>
+                                    </div><!-- /.media-body -->
+                                </div><!-- /.media -->
+                                <div class="line no-margin"></div><!-- /.line -->
+                                <div class="media inner-all no-margin">
+                                    <div class="pull-left">
+                                        <img src="https://bootdey.com/img/Content/avatar/avatar4.png" alt="..." class="img-post2">
+                                    </div><!-- /.pull-left -->
+                                    <div class="media-body">
+                                        <a href="#" class="h4">John Doe</a>
+                                        <small class="block text-muted">Quaerat, impedit minus non commodi facere doloribus nemo ea voluptate nesciunt deleniti.</small>
+                                        <em class="text-xs text-muted">Posted on <span class="text-danger">Dec 08, 2014</span></em>
+                                    </div><!-- /.media-body -->
+                                </div><!-- /.media -->
+                            </div><!-- /.panel-body -->
+                            <div class="panel-footer">
+                                <form action="#" class="form-horizontal">
+                                    <div class="form-group has-feedback no-margin">
+                                        <input class="form-control" type="text" placeholder="Add a new solution..">
+                                        <button type="submit" class="btn btn-theme fa fa-search form-control-feedback"></button>
+                                    </div>
+                                </form>
+                            </div><!-- /.panel-footer -->
+                        </div><!-- /.panel -->
+                    </div>
                 </div>
-			
-			<div class="modal-body">
-				<p>National Insurance Number: <input id="editNI" type="text"></p>
-				<p>Name: <input id="editName" type="text"></p>
-				<p>Phone: <input id="editPhone" type="text"></p>
-				<p>adressess: <input id="editadressess" type="text"></p>
-				<p>Department: <input id="editDepartment" type="text"></p>
-				<p><input id="IValue" style="display:none" type="text"></p><br>
-			</div>
-			<div class="modal-footer">
-				<button aria-label="Close" class="btn btn-primary" data-dismiss="modal" onclick="saveRecords()" type="button">Save</button> <button class="btn btn-secondary" data-dismiss="modal" onclick="cancel()" type="button">Cancel</button>
+
+                <div class="panel rounded shadow">
+                    <form action="...">
+                        <textarea class="form-control input-lg no-border" rows="2" placeholder="Share a new problem"></textarea>
+                    </form>
+                    <div class="panel-footer">
+                        <button class="btn btn-success pull-right mt-5">POST</button>
+                        <ul class="nav nav-pills">
+                            <li><a href="#"><i class="fa fa-user"></i></a></li>
+                            <li><a href="#"><i class="fa fa-map-marker"></i></a></li>
+                            <li><a href="#"><i class="fa fa-camera"></i></a></li>
+                            <li><a href="#"><i class="fa fa-smile-o"></i></a></li>
+                        </ul><!-- /.nav nav-pills -->
+                    </div><!-- /.panel-footer -->
+                </div><!-- /.panel -->
             </div>
         </div>
-		</div>
-	</div><button class="btn btn-primary" data-target="#mytable" data-toggle="modal" type="button">Add New</button>
-	<div class="modal fade" id="mytable" role="diaglog">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
+    </div>
 
-                    <button aria-label="Close" class="close" data-dismiss="modal" type="button">
-                        <span aria-hidden="true">
-                            &times;
-                        </span>
-                    </button>
-				</div>
-				<div class="bg-info">
-					<p>National Insurance Number: <input id="NewNI" type="text"></p>
-					<p>Name: <input id="newName" type="text"></p>
-					<p>Phone: <input id="newPhone" type="text"></p>
-					<p>adressess: <input id="newadressess" type="text"></p>
-					<p>Department: <input id="newDepartment" type="text"></p>
-				</div>
-				<div class="modal-footer">
-					<button aria-label="Close" class="btn btn-primary" data-dismiss="modal" onclick="submit1()" type="button">Save</button> <button class="btn btn-secondary" data-dismiss="modal" onclick="cancel1()" type="button">Cancel</button>
-				</div>
-			</div>
-		</div>
-	</div>
+
+    <style>
+        body {
+            margin-top: 20px;
+            background: #eee;
+        }
+
+        .divider {
+            height: 20px;
+            display: block;
+        }
+
+        /* ========================================================================
+        * FORM MISC
+        * ======================================================================== */
+        .input-group-addon {
+            -moz-border-radius: 0px;
+            -webkit-border-radius: 0px;
+            border-radius: 0px;
+            min-width: 39px;
+        }
+
+            .input-group-addon .ckbox, .input-group-addon .rdio {
+                position: absolute;
+                top: 4px;
+                left: 10px;
+            }
+
+        .input-group-lg > .form-control, .input-group-lg > .input-group-addon, .input-group-lg > .input-group-btn > .btn, .input-group-sm > .form-control, .input-group-sm > .input-group-addon, .input-group-sm > .input-group-btn > .btn, .input-group-xs > .form-control, .input-group-xs > .input-group-addon, .input-group-xs > .input-group-btn > .btn {
+            -moz-border-radius: 0px;
+            -webkit-border-radius: 0px;
+            border-radius: 0px;
+        }
+
+        .input-sm, .form-group-sm .form-control {
+            -moz-border-radius: 0px;
+            -webkit-border-radius: 0px;
+            border-radius: 0px;
+        }
+
+        .form-control {
+            -moz-border-radius: 0px;
+            -webkit-border-radius: 0px;
+            border-radius: 0px;
+            -moz-box-shadow: none;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+        }
+
+        @media (max-width: 640px) {
+            .form-inner-all [class*="col-"]:last-child .form-control {
+                margin-top: 15px;
+            }
+        }
+
+
+        /* ========================================================================
+        * PROFILE
+        * ======================================================================== */
+        .profile-cover {
+            width: 100%;
+        }
+
+            .profile-cover .cover {
+                position: relative;
+                border: 10px solid #FFF;
+            }
+
+                .profile-cover .cover .inner-cover {
+                    overflow: hidden;
+                    height: auto;
+                }
+
+                    .profile-cover .cover .inner-cover img {
+                        border: 1px solid transparent;
+                        text-align: center;
+                        width: 100%;
+                    }
+
+                    .profile-cover .cover .inner-cover .cover-menu-mobile {
+                        position: absolute;
+                        top: 10px;
+                        right: 10px;
+                    }
+
+                        .profile-cover .cover .inner-cover .cover-menu-mobile button i {
+                            font-size: 17px;
+                        }
+
+                .profile-cover .cover ul.cover-menu {
+                    padding-left: 150px;
+                    position: absolute;
+                    overflow: hidden;
+                    left: 1px;
+                    float: left;
+                    bottom: 0px;
+                    width: 100%;
+                    margin: 0px;
+                    background: none repeat scroll 0% 0% rgba(0, 0, 0, 0.24);
+                }
+
+                    .profile-cover .cover ul.cover-menu li {
+                        display: block;
+                        float: left;
+                        margin-right: 0px;
+                        padding: 0px 10px;
+                        line-height: 40px;
+                        height: 40px;
+                        -moz-transition: all 0.3s;
+                        -o-transition: all 0.3s;
+                        -webkit-transition: all 0.3s;
+                        transition: all 0.3s;
+                    }
+
+                        .profile-cover .cover ul.cover-menu li:hover {
+                            background-color: rgba(0, 0, 0, 0.44);
+                        }
+
+                        .profile-cover .cover ul.cover-menu li.active {
+                            background-color: rgba(0, 0, 0, 0.64);
+                        }
+
+                        .profile-cover .cover ul.cover-menu li a {
+                            color: #FFF;
+                            font-weight: bold;
+                            display: block;
+                            height: 40px;
+                            line-height: 40px;
+                            text-decoration: none;
+                        }
+
+                            .profile-cover .cover ul.cover-menu li a i {
+                                font-size: 18px;
+                            }
+
+            .profile-cover .profile-body {
+                margin: 0px auto 10px;
+                position: relative;
+            }
+
+            .profile-cover .profile-timeline {
+                padding: 15px;
+            }
+
+        .img-post {
+            width: 30px;
+            height: 30px;
+        }
+
+        .img-post2 {
+            width: 50px;
+            height: 50px;
+        }
+    </style>
 </body>
 </html>
-
-<style>body {
-	color: rgb(252, 54, 5);
-	background: rgb(0, 218, 247);
-	font-family: cursive;
-}
-th {
-	color: rgb(5, 50, 252);
-}
-.delete {
-	background-color: red;
-	padding: 8px 15px;
-	font-size: 18px;
-}
-.edit {
-	background-color: rgb(255, 81, 0);
-	padding: 8px 15px;
-	font-size: 20px;
-}
-</style>
-
-<Script >
-	let records = [{
-		"ninumber": "ZS502747A",
-		"fullname": "Chris P Bacon",
-		"phone": "07659-831024",
-		"adressess": "123 Elliot Hill",
-		"department": "IT"
-	}, {
-		"ninumber": "XS130502B",
-		"fullname": "Miles A Head",
-		"phone": "07666-616680",
-		"adressess": "321 Haha Road",
-		"department": "Sales"
-	}, {
-		"ninumber": "MY034526D",
-		"fullname": "Rick O'Shea",
-		"phone": "07440-003065",
-		"adressess": "64 Zoo Lane",
-		"department": "HR"
-	}, {
-		"ninumber": "AK311470",
-		"fullname": "Robyn Banks",
-		"phone": "07342-472921",
-		"adressess": "324 Langton Ridgeway",
-		"department": "HR"
-	}, {
-		"ninumber": "LY682275B",
-		"fullname": "Lorne Mowers",
-		"phone": "07822-821023",
-		"adressess": "234 Julian Market",
-		"department": "IT"
-	}, {
-		"ninumber": "BK227215B",
-		"fullname": "Frank N Stein",
-		"phone": "07661-522545",
-		"adressess": "12 Springfield Grange",
-		"department": "Sales"
-	}, {
-		"ninumber": "XB363374C",
-		"fullname": "Hedda Hare",
-		"phone": "07563-758264",
-		"adressess": "54 Blackbird Crescent",
-		"department": "IT"
-	}, {
-		"ninumber": "MY501327A",
-		"fullname": "Upton O Goode",
-		"phone": "07401-414740",
-		"adressess": "2 St Margarets Drive",
-		"department": "IT"
-	}, {
-		"ninumber": "TT405395B",
-		"fullname": "Marius Quick",
-		"phone": "07870-297789",
-		"adressess": "98 Earl Path",
-		"department": "IT"
-	}, {
-		"ninumber": "AZ764036A",
-		"fullname": "Max E Mumm",
-		"phone": "07872-642897",
-		"adressess": "233 Lady Smith Avenue",
-		"department": "IT"
-	}, {
-		"ninumber": "ES73841C",
-		"fullname": "Yul B Allwright",
-		"phone": "07750-872412",
-		"adressess": "45 Fountains Broadway",
-		"department": "Sales"
-	}, {
-		"ninumber": "WX465470A",
-		"fullname": "Lori Driver",
-		"phone": "07773-782275",
-		"adressess": "65 Burlington Lodge",
-		"department": "HR"
-	}, {
-		"ninumber": "AK625470D",
-		"fullname": "Shirley U Care",
-		"phone": "07569-060117",
-		"adressess": "97 Holderness Drive",
-		"department": "HR"
-	}, {
-		"ninumber": "SW098272B",
-		"fullname": "Felix Cited",
-		"phone": "07394-529507",
-		"adressess": "32 Banningham Court",
-		"department": "Sales"
-	}, {
-		"ninumber": "OB043941D",
-		"fullname": "Sandy Beech",
-		"phone": "07958-301691",
-		"adressess": "3 Third Mount",
-		"department": "Sales"
-	}];
-var i = 0;
-
-function showdata() {
-	var table = document.getElementById("hrtable");
-	for (; i < records.length; i++) {
-		var row = table.insertRow();
-		var NI = row.insertCell(0);
-		var name = row.insertCell(1);
-		var telephone = row.insertCell(2);
-		var adress = row.insertCell(3);
-		var depart = row.insertCell(4);
-		var deletee = row.insertCell(5);
-		var edit = row.insertCell(6);
-		var editRowId = row.insertCell(7);
-		row.id = i;
-		NI.innerHTML = records[i]["ninumber"];
-		name.innerHTML = records[i]["fullname"];
-		telephone.innerHTML = records[i]["phone"];
-		adress.innerHTML = records[i]["adressess"];
-		depart.innerHTML = records[i]["department"];
-		var rownumber = row.rowIndex;
-		deletee.id = i;
-		editRowId.innerHTML = i;
-		editRowId.style.visibility = "hidden";
-		var nationalInsuranceNumber = records[i]["ninumber"];
-		deletee.innerHTML = '<button type="button" class="btn btn-primary delete" id="' + i + '" onclick="deletedRecord(this.id)">Delete</button>';
-		edit.innerHTML = '<button type="button" class="btn btn-primary edit" data-toggle="modal" data-target="#editModal" id="' + i + '" onclick="editRecord(this.id)">Edit</button>';
-	}
-	filterOptions();
-}
-
-function click() {}
-
-function filterOptions() {
-	var filterButton = document.getElementById("Departments");
-	filterLength = filterButton.length;
-	for (x = filterLength - 1; x >= 0; x--) {
-		filterButton.options[x] = null;
-	}
-	var option = document.createElement("option");
-	option.text = "...";
-	filterButton.add(option);
-	var distinctDepartments = [...new Set(records.map(x => x.department))];
-	for (var y = 0; y < distinctDepartments.length; y++) {
-		if (distinctDepartments[y] != undefined) {
-			var option = document.createElement("option");
-			option.text = distinctDepartments[y];
-			filterButton.add(option);
-		}
-	}
-}
-
-function filterTable(selection = 1) {
-	console.log(selection);
-	var dropdown = document.getElementById("Departments");
-	if (selection != 1) {
-		dropdown.value = selection;
-		console.log(dropdown.value);
-	}
-	var departmentSelection = dropdown.value;
-	var table = document.getElementById("hrtable");
-	var row = table.rows
-	var x = 1;
-	var y = 1;
-	for (; y < row.length; y++) {
-		if (row[y].style.visibility == "collapse") {
-			continue;
-		} else {
-			row[y].style.display = "";
-		}
-	}
-	for (; x < row.length; x++) {
-		currentRow = row[x];
-		if (departmentSelection == "...") {
-			break;
-		}
-		currentRowDepartment = currentRow.cells[4].innerHTML;
-		if (currentRowDepartment != departmentSelection) {
-			currentRow.style.display = "none";
-		}
-	}
-}
-
-function clearFilter() {
-	console.log("CLEAR FILTER");
-	var table = document.getElementById("hrtable");
-	var row = table.rows
-	var x = 1;
-	var y = 1;
-	for (; y < row.length; y++) {
-		if (row[y].style.visibility == "collapse") {
-			continue;
-		} else {
-			row[y].style.display = "";
-		}
-	}
-	filterOptions();
-}
-
-function deletedRecord(x) {
-	var table = document.getElementById("hrtable");
-	delete records[x];
-	var row = table.rows;
-	var numberX = parseInt(x) + 1;
-	x = parseInt(x);
-	var number = 1;
-	rowId = row[numberX].id;
-	row[numberX].style.visibility = "collapse";
-	var dropdown = document.getElementById("Departments");
-	var departmentSelection = dropdown.value;
-	// filterOptions();
-	// filterTable(departmentSelection);
-}
-
-function editRecord(x) {
-	cancel();
-	var table = document.getElementById("hrtable");
-	var row = table.rows;
-	var numberX = parseInt(x) + 1;
-	var currentRow = row[numberX];
-	var show = document.getElementById("editModal");
-	show.style.visibility = "";
-	editedNino = document.getElementById("editNI");
-	editedNino.value = currentRow.cells[0].innerHTML;
-	editedName = document.getElementById("editName");
-	editedName.value = currentRow.cells[1].innerHTML;
-	editedPhone = document.getElementById("editPhone");
-	editedPhone.value = currentRow.cells[2].innerHTML;
-	editedadressess = document.getElementById("editadressess");
-	editedadressess.value = currentRow.cells[3].innerHTML;
-	editedDepartment = document.getElementById("editDepartment");
-	editedDepartment.value = currentRow.cells[4].innerHTML;
-	editedIValue = document.getElementById("IValue");
-	editedIValue.value = currentRow.cells[7].innerHTML;
-	editedIValue.style.visibility = "collapse";
-}
-
-function saveRecords() {
-	var table = document.getElementById("hrtable");
-	var row = table.rows;
-	var iValue = document.getElementById("iValue");
-    console.log(iValue);
-
-	iValue = parseInt(iValue.value);
-
-    console.log(iValue);
-
-
-	iValue += 1;
-	var currentRow = row[iValue];
-	editedNino = document.getElementById("editNI");
-	newNinoValue = editedNino.value;
-	currentRow.cells[0].innerHTML = newNinoValue;
-	editedName = document.getElementById("editName");
-	newNameValue = editedName.value;
-	currentRow.cells[1].innerHTML = newNameValue;
-	editedPhone = document.getElementById("editPhone");
-	newPhoneValue = editedPhone.value;
-	currentRow.cells[2].innerHTML = newPhoneValue;
-	editedadressess = document.getElementById("editadressess");
-	newadressessValue = editedadressess.value;
-	currentRow.cells[3].innerHTML = newadressessValue;
-	editedDepartment = document.getElementById("editDepartment");
-	newDepartmentValue = editedDepartment.value;
-	currentRow.cells[4].innerHTML = newDepartmentValue;
-	var recordsIValue = iValue;
-	recordsIValue -= 1;
-	records[recordsIValue]["ninumber"] = newNinoValue;
-	records[recordsIValue]["fullname"] = newNameValue;
-	records[recordsIValue]["phone"] = newPhoneValue;
-	records[recordsIValue]["adressess"] = newadressessValue;
-	records[recordsIValue]["department"] = newDepartmentValue;
-	cancel1();
-	var dropdown = document.getElementById("Departments");
-	var departmentSelection = dropdown.value;
-	filterOptions();
-	console.log("THE DEPARTMENT SELECTION IS: " + departmentSelection);
-	filterTable(departmentSelection);
-}
-
-function addNew() {
-	cancel1();
-	var show = document.getElementById("form");
-	show.style.display = "";
-}
-
-function cancel() {
-	var show = document.getElementById("editModal");
-	show.style.display = "none";
-	var newNI = document.getElementById("NewNI");
-	var newName = document.getElementById("newName");
-	var newPhone = document.getElementById("newPhone");
-	var newadressess = document.getElementById("newadressess");
-	var newDepartment = document.getElementById("newDepartment");
-	newNI.value = "";
-	newName.value = "";
-	newPhone.value = "";
-	newadressess.value = "";
-	newDepartment.value = "";
-}
-
-function cancel1() {
-	var show = document.getElementById("editModal");
-	show.style.visibility = "collapse";
-}
-
-function submit1() {
-	console.log("enter");
-	var NewNI = document.getElementById("NewNI");
-	var newName = document.getElementById("newName");
-	var newPhone = document.getElementById("newPhone");
-	var newadressess = document.getElementById("newadressess");
-	var newDepartment = document.getElementById("newDepartment");
-	var data = {
-		"ninumber": NewNI.value,
-		"fullname": newName.value,
-		"phone": newPhone.value,
-		"adressess": newadressess.value,
-		"department": newDepartment.value
-	};
-	records.push(data);
-	var show = document.getElementById("mytable");
-	var table = document.getElementById("hrtable");
-	var row = table.insertRow();
-	var NI = row.insertCell(0);
-	var name = row.insertCell(1);
-	var telephone = row.insertCell(2);
-	var adress = row.insertCell(3);
-	var depart = row.insertCell(4);
-	var deletee = row.insertCell(5);
-	var edit = row.insertCell(6);
-	var editRowId = row.insertCell(7);
-	row.id = i;
-	editRowId.innerHTML = i
-	editRowId.style.visibility = "hidden";
-	NI.innerHTML = NewNI.value;
-	name.innerHTML = newName.value;
-	telephone.innerHTML = newPhone.value;
-	adress.innerHTML = newadressess.value;
-	depart.innerHTML = newDepartment.value;
-	NewNI.value = "";
-	newName.value = "";
-	newPhone.value = "";
-	newadressess.value = "";
-	newDepartment.value = "";
-	deletee.innerHTML = '<button type="button" class="btn btn-primary delete" id="' + i + '" onclick="deletedRecord(this.id)">Delete</button>';
-	edit.innerHTML = '<button type="button" class="btn btn-primary edit" data-toggle="modal" data-target="#editModal" id="' + i + '" onclick="editRecord(this.id)">Edit</button>';
-	i++;
-	filterOptions();
-}
-window.onload = showdata; </Script>
